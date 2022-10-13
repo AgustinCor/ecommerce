@@ -1,0 +1,355 @@
+  :root{
+    --header-height: 3.5rem;
+    --first-color: hsl(354, 78%, 60%);
+    --button-color: hsl(0, 0%, 17%);
+    --button-color-alt: hsl(0, 0%, 21%);
+    --card-color: hsl(0, 0%, 90%);
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 55%);
+    --body-color: hsl(206, 4%, 97%);
+    --container-color: #fff;
+    --border-color: hsl(0, 0%, 94%);
+    --body-font: 'Roboto', sans-serif;  
+  }
+
+  html{
+    box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after{
+    box-sizing:inherit;
+  }
+
+  body{
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+  }
+  
+  header{
+    display:flex ;
+    justify-content: center;
+    background-color: var(--body-color);
+    width: 100vw;
+  }
+
+  header h2{
+    color: var(--first-color);
+  }
+
+  header .All-header-body{
+     display: flex;
+     justify-content: center;
+     height: 80vh;
+     width: 50%;
+  }
+   
+  header .header-body-left{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  header .header-body-right{
+     display:flex;
+     align-items: center;
+     background-color: var(--first-color);
+  }
+
+  header .header-body h1{
+    font-size: 60px;
+
+  }
+
+  header .header-body-buttons{
+    display: flex;
+    align-items: center;
+    margin-top:50px;
+  }
+
+  header .header-body-buttons button{
+     border: none;
+     font-weight: 600;
+     cursor: pointer;
+  }
+
+  header .button1{
+    background-color:#bbb ;
+    padding:15px 20px;
+    color: #000;
+  }
+
+  header .button2{
+    background-color: var(--button-color);
+    padding:20px 25px;
+    color: #fff;
+  }
+
+  header .button1:hover{
+    color: #fff;
+  }
+
+  header .button2:hover{
+    background-color: var(--first-color);
+  }
+
+  nav{
+    position: fixed;
+    display: flex;
+    background-color: #fff;
+    width: 100vw;
+    padding: 30px;
+    justify-content:space-evenly;
+  }
+
+  nav .nav-section a{
+    padding: 0 20px;
+    font-weight:500;
+    font-size: 20px;
+  }
+
+  nav .nav-section .a-home{
+    color: var(--first-color);
+  }
+
+  aside{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    width: 460px;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  
+  aside.active{
+    right: 0;
+  }
+
+  #cart-icon{
+    cursor: pointer;
+  }
+
+  #close-cart{
+    cursor: pointer;
+    text-align: end;
+  }
+  
+  aside h2{
+    text-align: center;
+  }
+
+  aside .aside-container{
+    display: flex;
+    justify-content:center ;
+    flex-direction: column;
+    margin:50px 30px;
+  }
+
+  aside .aside-price-container{
+    display: flex;
+    justify-content:space-between;
+  }
+
+  aside .aside-button-container{
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 0;
+  }
+ 
+  aside button{
+    background-color: var(--card-color);
+    border: none;
+    margin-right:10px ;
+    padding:20px 40px;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  aside .products{
+    display: flex;
+    align-items: center;
+    width: 30%;
+    height: 10%;
+  }
+
+  aside .products img{
+    width: 60%;
+    height: 60%;
+  }
+
+  aside .products-info{
+    padding: 0 10px;
+  }
+
+  aside .plus-products{
+    display: flex;
+    align-items: center;
+  }
+
+  aside .plus-products a{
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #000;
+    box-shadow:-5px 0px 50px -15px #000 ;
+    cursor: pointer;
+  }
+
+  main{
+    margin: 200px 0;
+    background-color: var(--body-color);
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  main .main-head{
+    display: flex;
+    justify-content:center;
+    margin:50px;
+  }
+
+  main .main-head .product-class{
+     text-align: center;
+     padding: 0 100px;
+     cursor: pointer;
+  }
+ 
+  main .main-head .product-line{
+    position: relative;
+  }
+
+  main .main-head .product-line::before{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 40px;
+    top: 0;
+    right:0;
+    bottom:0 ;
+    background-color: #000;
+    margin: auto ;
+  }
+
+  main .main-footer{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  main .card{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border-radius:20px;
+    overflow: hidden;
+  }
+
+  main .card-container{
+    background-color: var(--card-color);
+  }
+
+  main .card img{
+     width: 100%;
+     padding: 30px;
+  }
+  
+  main .card .card-button{
+    height: 0px;
+    text-align: end;
+    cursor: pointer;
+  }
+
+  main .card .card-button a{
+    position: relative;
+    margin-right:20px;
+    border-radius: 50%;
+    padding:20px;
+    height: 50px;
+    background-color:#fff ;
+    box-shadow: -5px 0px 50px -15px #000;
+  }
+
+  main .card .card-button a:hover{
+    background-color:var(--first-color) ;
+    color: #fff;
+  }
+
+  main .card .card-button a i:hover{
+    color: #fff;
+  }
+
+  main .card .card-text{
+     padding: 20px;
+     background-color: #fff;
+  }
+
+  main .card .card-text h2{
+    display: flex;
+    align-items: center;
+  }
+
+  main .card .card-text span{
+    padding:0 5px;
+    font-size: 16px;
+    color: #888;
+  }
+
+  footer {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+  }
+  
+  footer .footer-edge{
+    border: 1px solid #fff;
+    margin-top: 50px;
+    width: 50%;
+  }
+
+  footer .footer-elements{
+    width: 70%;
+    margin: 0 200px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  footer .footer-elements p{
+    color: #444;
+    cursor: pointer;
+  }
+
+  footer .footer-elements p:hover{
+    color: #111;
+  }
+
+  footer .footer-elements .box4 a{
+    padding:0 10px ;
+  }
+
+  footer .footer-endline{
+    margin-top: 100px;
+  }
+
+  footer .footer-endline p{
+    color: #888;
+  }
+
+
+  .hide{
+    display: none;
+  }
+  
+
+  .fa-lock.active{
+    right: 0;
+  }
+  
