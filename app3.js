@@ -1,6 +1,8 @@
 //const cardAreas= document.querySelector(".main-footer");
 const productContainer=document.querySelector(".product-container");
-const addProduct=document.querySelectorAll(".a-button1");
+const addProduct1=document.querySelector(".a-button1");
+const addProduct2=document.querySelector(".a-button2");
+const addProduct3=document.querySelector(".a-button3");
 
 let productArray=JSON.parse(localStorage.getItem("products")) ?? [];
 
@@ -12,6 +14,7 @@ productContainer.addEventListener("click",(e)=>{
    productArray[0].unit+=1;
    createProduct();
    console.log(productArray[0].unit);
+   localStorage.setItem("tasks",JSON.stringify(tasksArray));
   }; 
   if (e.target.classList.contains("minusUnit")){
     productArray[0].unit-=1; 
@@ -21,19 +24,25 @@ productContainer.addEventListener("click",(e)=>{
    
 });
 
-addProduct.forEach((element)=>{
-  element.addEventListener("click",(e)=>{
-      productArray.push({id:1 ,nombre:"Buzo1" ,tipo:"hoodie", unit:1, precio:14});
+addProduct1.addEventListener("click",(e)=>{
+      productArray.push({id:1 ,nombre:"Buzo1" ,tipo:"hoodie", unit:1, precio:14,img:"featured1.png"});
       createProduct();
-  });
-})
+});
+addProduct2.addEventListener("click",(e)=>{
+    productArray.push({id:1 ,nombre:"Buzo2" ,tipo:"hoodie",  unit:1, precio:14,img:"home.png"});
+    createProduct();
+});
+addProduct3.addEventListener("click",(e)=>{
+  productArray.push({id:1 ,nombre:"Buzo3" ,tipo:"hoodie", unit:1, precio:14,img:"featured3.png"});
+  createProduct();
+});
 
 
 function createProduct(){
     const elements=productArray.map((products)=>{
         return `
         <div class="products">
-        <img src="featured1.png">   
+      <img src=${products.img}>   
         <div class="products-info">
           <h3>Shirts</h3>
           <p class="stock">Stock:10<span>|$24.00</span></p>  
@@ -45,7 +54,8 @@ function createProduct(){
             <a class="minusUnit"><i class="minusUnit fa-solid fa-trash"></i></a>
           </div>
         </div>
-      </div>`;
+      </div>
+      <img class=${"hide"} src="empty-cart.png">`;
     });
     productContainer.innerHTML=elements.join('');
 }
